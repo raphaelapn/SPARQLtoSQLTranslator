@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/commons-cli-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/commons-cli-1.2-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/jena-arq-2.11.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jena-arq-2.11.0.jar"/>
+	<classpathentry kind="lib" path="lib/jena-core-2.11.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jena-core-2.11.0.jar"/>
+	<classpathentry kind="lib" path="lib/jena-iri-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jena-iri-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.6.4.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.6.4.jar"/>
+	<classpathentry kind="lib" path="lib/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="lib/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/opt/jars/Cloudera_ImpalaJDBC3_2.5.5.1007/hive_metastore.jar"/>
+	<classpathentry kind="lib" path="/opt/jars/Cloudera_ImpalaJDBC3_2.5.5.1007/hive_service.jar"/>
+	<classpathentry kind="lib" path="/opt/jars/Cloudera_ImpalaJDBC3_2.5.5.1007/ImpalaJDBC3.jar"/>
+	<classpathentry kind="lib" path="/opt/jars/Cloudera_ImpalaJDBC3_2.5.5.1007/libfb303-0.9.0.jar"/>
+	<classpathentry kind="lib" path="/opt/jars/Cloudera_ImpalaJDBC3_2.5.5.1007/libthrift-0.9.0.jar"/>
+	<classpathentry kind="lib" path="/opt/jars/Cloudera_ImpalaJDBC3_2.5.5.1007/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="/opt/jars/Cloudera_ImpalaJDBC3_2.5.5.1007/ql.jar"/>
+	<classpathentry kind="lib" path="/opt/jars/Cloudera_ImpalaJDBC3_2.5.5.1007/TCLIServiceClient.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

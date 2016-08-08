@@ -1,0 +1,23 @@
+[31.07.2015 01:19:06] [FATAL] sparql2impala.run.Main :: Missing required option: i
+org.apache.commons.cli.MissingOptionException: Missing required option: i
+	at org.apache.commons.cli.Parser.checkRequiredOptions(Parser.java:299)
+	at org.apache.commons.cli.Parser.parse(Parser.java:231)
+	at org.apache.commons.cli.Parser.parse(Parser.java:85)
+	at sparql2impala.run.Main.parseInput(Main.java:129)
+	at sparql2impala.run.Main.main(Main.java:57)
+[31.07.2015 01:39:39] [FATAL] sparql2impala.run.Main :: Missing argument for option: d
+org.apache.commons.cli.MissingArgumentException: Missing argument for option: d
+	at org.apache.commons.cli.Parser.processArgs(Parser.java:343)
+	at org.apache.commons.cli.Parser.processOption(Parser.java:393)
+	at org.apache.commons.cli.Parser.parse(Parser.java:199)
+	at org.apache.commons.cli.Parser.parse(Parser.java:85)
+	at sparql2impala.run.Main.parseInput(Main.java:129)
+	at sparql2impala.run.Main.main(Main.java:57)
+[18.11.2015 01:16:38] [ERROR] sparql2impala.ImpalaOpVisitor :: GROUP not supported yet!
+[21.04.2016 21:31:56] [FATAL] sparql2impala.run.Main :: Missing required option: i
+org.apache.commons.cli.MissingOptionException: Missing required option: i
+	at org.apache.commons.cli.Parser.checkRequiredOptions(Parser.java:299)
+	at org.apache.commons.cli.Parser.parse(Parser.java:231)
+	at org.apache.commons.cli.Parser.parse(Parser.java:85)
+	at sparql2impala.run.Main.parseInput(Main.java:138)
+	at sparql2impala.run.Main.main(Main.java:58)
