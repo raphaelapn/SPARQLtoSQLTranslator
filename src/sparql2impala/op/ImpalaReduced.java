@@ -9,10 +9,7 @@ import sparql2impala.sql.SQLStatement;
 import com.hp.hpl.jena.shared.PrefixMapping;
 import com.hp.hpl.jena.sparql.algebra.op.OpReduced;
 
-/**
- * 
- * @author Antony Neu
- */
+//NAO IMPLEMENTADO
 public class ImpalaReduced extends ImpalaOp1 {
 
 	private final OpReduced opReduced;
