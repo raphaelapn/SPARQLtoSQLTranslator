@@ -14,10 +14,7 @@ import com.hp.hpl.jena.shared.PrefixMapping;
 import com.hp.hpl.jena.sparql.algebra.op.OpFilter;
 import com.hp.hpl.jena.sparql.expr.Expr;
 
-/**
- * 
- * @author Antony Neu
- */
+
 public class ImpalaFilter extends ImpalaOp1 {
 
 	private final OpFilter opFilter;
