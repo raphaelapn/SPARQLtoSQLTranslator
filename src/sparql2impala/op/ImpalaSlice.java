@@ -7,10 +7,7 @@ import sparql2impala.sql.SQLStatement;
 import com.hp.hpl.jena.shared.PrefixMapping;
 import com.hp.hpl.jena.sparql.algebra.op.OpSlice;
 
-/**
- * 
- * @author Antony Neu
- */
+
 public class ImpalaSlice extends ImpalaOp1 {
 
 	private final OpSlice opSlice;
