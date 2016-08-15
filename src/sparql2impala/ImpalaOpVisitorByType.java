@@ -21,13 +21,10 @@ import sparql2impala.op.ImpalaUnion;
 import sparql2impala.op.ImpalaGroup;
 import sparql2impala.op.ImpalaExtend;
 
-/**
- *
- * @author Antony Neu
- */
+
 public abstract class ImpalaOpVisitorByType implements ImpalaOpVisitor {
     
-    // Define a static logger variable so that it references the corresponding Logger instance
+
     protected static Logger logger = Logger.getLogger(ImpalaOpVisitor.class);
     
 
@@ -56,7 +53,7 @@ public abstract class ImpalaOpVisitorByType implements ImpalaOpVisitor {
     protected abstract void visitN(ImpalaOpN op);
     
 
-    // Declare basic visit methods as final such that derived classes cannot override it
+
     // OPERATORS
     @Override
     public final void visit(ImpalaBGP ImpalaBGP) {
