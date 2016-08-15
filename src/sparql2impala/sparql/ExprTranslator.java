@@ -41,10 +41,7 @@ import com.hp.hpl.jena.sparql.expr.ExprVisitor;
 import com.hp.hpl.jena.sparql.expr.NodeValue;
 import com.hp.hpl.jena.sparql.util.FmtUtils;
 
-/**
- *
- * @author Alexander Schaetzle
- */
+
 public class ExprTranslator implements ExprVisitor {
 
     private boolean expandPrefixes;
