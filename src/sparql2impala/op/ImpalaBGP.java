@@ -19,10 +19,7 @@ import com.hp.hpl.jena.graph.Triple;
 import com.hp.hpl.jena.shared.PrefixMapping;
 import com.hp.hpl.jena.sparql.algebra.op.OpBGP;
 
-/**
- * 
- * @author Antony Neu
- */
+
 public class ImpalaBGP extends ImpalaOp0 {
 
 	private final OpBGP opBGP;
@@ -53,18 +50,18 @@ public class ImpalaBGP extends ImpalaOp0 {
 		for (Triple triple : triples) {
 			Node key = null;
 			boolean fromTripletable = false;
-			//se o predicado for uma vari·vel
+			//se o predicado for uma vari√°vel
 			if (triple.getPredicate().isVariable()) {
 				key = triple.getPredicate();
 				fromTripletable = true;
 			} 
-			//caso o predicado n„o seja variavel, a chave do Hash Map ser· o subject
+			//caso o predicado n√£o seja variavel, a chave do Hash Map ser√° o subject
 			else {
 				key = triple.getSubject();
 				fromTripletable = false;
 			}
 
-			//se o HashMap ainda n„o conter o tipo de Sujeito, cria uma nova entrada no HashMap
+			//se o HashMap ainda n√£o conter o tipo de Sujeito, cria uma nova entrada no HashMap
 			if (!tripleGroups.containsKey(key)) {
 				//cada grupo cria um BGP1_tableNumber
 				tripleGroups.put(key, new TripleGroup(resultName + "_"
@@ -112,12 +109,7 @@ public class ImpalaBGP extends ImpalaOp0 {
 		return res;
 	}
 
-	/**
-	 * Finds index of best join partner.
-	 * @param group_shifted
-	 * @param groups
-	 * @return index in list
-	 */
+
 	public int findBestJoin(Map<String, String[]> group_shifted, ArrayList<TripleGroup> groups) {
 		int best = -1;
 		int index = 0;
