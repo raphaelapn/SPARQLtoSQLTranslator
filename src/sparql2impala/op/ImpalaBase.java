@@ -6,10 +6,7 @@ import java.util.Map;
 
 import com.hp.hpl.jena.shared.PrefixMapping;
 
-/**
- *
- * @author Antony Neu
- */
+
 public abstract class ImpalaBase implements ImpalaOp {
 
     protected PrefixMapping prefixes;
