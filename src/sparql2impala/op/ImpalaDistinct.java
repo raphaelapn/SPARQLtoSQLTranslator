@@ -7,10 +7,7 @@ import sparql2impala.sql.SQLStatement;
 import com.hp.hpl.jena.shared.PrefixMapping;
 import com.hp.hpl.jena.sparql.algebra.op.OpDistinct;
 
-/**
- * 
- * @author Antony Neu
- */
+
 public class ImpalaDistinct extends ImpalaOp1 {
 
 	private final OpDistinct opDistinct;
