@@ -6,10 +6,7 @@ import com.hp.hpl.jena.sparql.core.BasicPattern;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Alexander Schaetzle
- */
+
 public class ReorderNoCross {
     
     private final ArrayList<String> joinSchema;
