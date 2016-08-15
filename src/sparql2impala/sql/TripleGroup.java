@@ -15,12 +15,7 @@ import com.hp.hpl.jena.graph.Triple;
 import com.hp.hpl.jena.shared.PrefixMapping;
 import com.hp.hpl.jena.sparql.util.FmtUtils;
 
-/**
- * Group of triples within a BGP.
- * 
- * @author neua
- * 
- */
+
 public class TripleGroup {
 
 	private List<Triple> triples = new ArrayList<Triple>();
@@ -35,9 +30,7 @@ public class TripleGroup {
 		return name;
 	}
 
-	/**
-	 * If the same predicate is selected twice, then a cross join is needed.
-	 */
+
 
 	ArrayList<Triple> crossjoin = new ArrayList<Triple>();
 	private Map<String, String[]> crossJoinMapping = new HashMap<String, String[]>();
@@ -121,7 +114,7 @@ public class TripleGroup {
 							+ FmtUtils.stringForNode(subject,
 									this.prefixMapping) + "'");
 				} else {
-					//guarda em vars se sujeito È vari·vel
+					//guarda em vars se sujeito √© vari√°vel
 					vars.add(subject.getName());
 				/*	whereConditions.add(Tags.SUBJECT_COLUMN_NAME
 							+ " is not null ");*/
@@ -142,7 +135,7 @@ public class TripleGroup {
 						+ " is not null"));*/
 
 			} else {
-				//guarda em vars se predicado È vari·vel
+				//guarda em vars se predicado √© vari√°vel
 				vars.add(predicate.getName());
 			}
 			if (object.isURI() || object.isLiteral() || object.isBlank()) {
@@ -162,7 +155,7 @@ public class TripleGroup {
 				}
 				whereConditions.add(condition);
 			} else {
-				//guarda em vars se objeto È vari·vel
+				//guarda em vars se objeto √© vari√°vel
 				vars.add(object.getName());
 			}
 		}
