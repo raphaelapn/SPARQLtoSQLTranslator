@@ -7,10 +7,7 @@ import sparql2impala.sql.Select;
 
 import com.hp.hpl.jena.shared.PrefixMapping;
 
-/**
- *
- * @author Antony Neu
- */
+
 public abstract class ImpalaOp1 extends ImpalaBase {
 
     protected ImpalaOp subOp;
