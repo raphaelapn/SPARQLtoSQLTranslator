@@ -7,13 +7,7 @@ import sparql2impala.op.ImpalaOp1;
 import sparql2impala.op.ImpalaOp2;
 import sparql2impala.op.ImpalaOpN;
 
-/**
- * Applies a given ImpalaOpVisitor to all operators in the tree Can walk through
- * the tree bottom up or top down.
- * 
- * @author Antony Neu
- * @see ImpalaOpVisitor.Impala.ImpalaOpVisitor
- */
+
 public class ImpalaOpWalker extends ImpalaOpVisitorByType {
 
 	// Visitor to be applied to all operators in the tree below the given
