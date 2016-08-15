@@ -35,10 +35,7 @@ import com.hp.hpl.jena.sparql.algebra.op.OpUnion;
 import com.hp.hpl.jena.sparql.algebra.op.OpGroup;
 import com.hp.hpl.jena.sparql.algebra.op.OpExtend;
 
-/**
- *
- * @author Antony Neu
- */
+
 public class AlgebraTransformer extends OpVisitorBase {
 
     private final Stack<ImpalaOp> stack;
