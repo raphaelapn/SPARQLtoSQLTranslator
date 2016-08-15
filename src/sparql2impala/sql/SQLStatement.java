@@ -35,10 +35,7 @@ public abstract class SQLStatement {
 
 	public abstract String toString();
 
-	/**
-	 * 
-	 * @return String represantation with item name, e.g. (SELECT ...) table1.
-	 */
+
 	public String toNamedString() {
 		return this.toString() + " " + statementName;
 	}
