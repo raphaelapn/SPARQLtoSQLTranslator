@@ -5,10 +5,7 @@ import java.util.HashMap;
 
 import com.hp.hpl.jena.shared.PrefixMapping;
 
-/**
- *
- * @author Antony Neu
- */
+
 public abstract class ImpalaOp0 extends ImpalaBase {
 
     protected ImpalaOp0(PrefixMapping _prefixes) {
