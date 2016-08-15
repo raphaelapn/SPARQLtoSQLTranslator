@@ -14,10 +14,7 @@ import sparql2impala.op.ImpalaSlice;
 import sparql2impala.op.ImpalaUnion;
 import sparql2impala.op.ImpalaGroup;
 import sparql2impala.op.ImpalaExtend;
-/**
- *
- * @author Antony Neu
- */
+
 public interface ImpalaOpVisitor {
     
     // Operators
