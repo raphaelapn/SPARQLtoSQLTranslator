@@ -9,10 +9,7 @@ import sparql2impala.Tags;
 import com.hp.hpl.jena.shared.PrefixMapping;
 import com.hp.hpl.jena.sparql.algebra.op.OpSequence;
 
-/**
- *
- * @author Antony Neu
- */
+
 public class ImpalaSequence extends ImpalaOpN {
 
     private final OpSequence opSequence;
