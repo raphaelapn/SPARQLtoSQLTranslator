@@ -6,10 +6,7 @@ import com.hp.hpl.jena.sparql.algebra.OpVisitorByType;
 import com.hp.hpl.jena.sparql.algebra.op.*;
 import java.util.Iterator;
 
-/**
- *
- * @author Alexander Schaetzle
- */
+
 public class AlgebraWalker extends OpVisitorByType {
 
     private final OpVisitor visitor;
