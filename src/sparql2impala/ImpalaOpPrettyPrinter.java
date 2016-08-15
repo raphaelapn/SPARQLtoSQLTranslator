@@ -8,30 +8,19 @@ import sparql2impala.op.ImpalaOp1;
 import sparql2impala.op.ImpalaOp2;
 import sparql2impala.op.ImpalaOpN;
 
-/**
- * Class for printing a ImpalaOp tree.
- */
+
 public class ImpalaOpPrettyPrinter extends ImpalaOpVisitorByType {
 
 	private final PrintWriter writer;
 	private String offset;
 
-	/**
-	 * Private constructor, initialization using factory function.
-	 * 
-	 * @param _writer
-	 */
+
 	private ImpalaOpPrettyPrinter(PrintWriter _writer) {
 		offset = "";
 		writer = _writer;
 	}
 
-	/**
-	 * Prints the given ImpalaOp tree.
-	 * 
-	 * @param _writer
-	 * @param op
-	 */
+
 	public static void print(PrintWriter _writer, ImpalaOp op) {
 		op.visit(new ImpalaOpPrettyPrinter(_writer));
 	}
