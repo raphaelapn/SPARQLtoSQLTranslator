@@ -28,27 +28,18 @@ import sparql2impala.sql.JoinUtil;
 import sparql2impala.sql.SQLStatement;
 import sparql2impala.sql.Schema;
 
-/**
- * Translates a ImpalaOp Tree into a corresponding Impala SQL program. It walks
- * through the ImpalaOp Tree bottom up and generates the commands for every
- * operator. A SPARQL Algebra Tree must be translated into a corresponding ImpalaOp
- * Tree before using the ImpalaOpTranslator.
- * 
- * @see sparql2impala.sparql.AlgebraTransformer
- */
+
 public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 
-	// Expand prefixes or not
+
 	private boolean expandPrefixes;
-	// Count the occurences of an operator
+
 	private int countBGP, countJoin, countLeftJoin, countUnion, countSequence,
 			countFilter;
 
 	private Stack<SQLStatement> stack = new Stack<SQLStatement>();
 
-	/**
-	 * Constructor of class ImpalaOpTranslator.
-	 */
+
 	public ImpalaOpTranslator() {
 		countBGP = 0;
 		countJoin = 0;
@@ -58,15 +49,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 		countFilter = 0;
 	}
 
-	/**
-	 * Translates a ImpalaOp Tree into a corresponding Impala SQL program.
-	 * 
-	 * @param op
-	 *            Root of the ImpalaOp Tree
-	 * @param _expandPrefixes
-	 *            Expand prefixes used in the original query or not
-	 * @return Impala SQL program
-	 */
+
 	public String translate(ImpalaOp op, boolean _expandPrefixes) {
 		expandPrefixes = _expandPrefixes;
 		// Walk through the tree bottom up
@@ -257,7 +240,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 		stack.push(projection);
 	}
 
-	/**Teste - Translate GROUP BY**/
+	/**Translate GROUP BY**/
 	@Override
 	public void visit(ImpalaGroup impalaGroup) {
 		SQLStatement group = impalaGroup.translate(Tags.GROUP,
@@ -265,7 +248,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 		stack.push(group);
 	}
 	
-	/**Teste - Translate Extend**/
+	/**Translate Extend**/
 	@Override
 	public void visit(ImpalaExtend impalaExtend) {
 		SQLStatement extend = impalaExtend.translate(Tags.EXTEND,
