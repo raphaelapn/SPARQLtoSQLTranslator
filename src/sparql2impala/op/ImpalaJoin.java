@@ -19,10 +19,7 @@ import com.hp.hpl.jena.shared.PrefixMapping;
 import com.hp.hpl.jena.sparql.algebra.op.OpJoin;
 import com.hp.hpl.jena.sparql.expr.Expr;
 
-/**
- * 
- * @author Antony Neu
- */
+
 public class ImpalaJoin extends ImpalaOp2 {
 
 	private final OpJoin opJoin;
