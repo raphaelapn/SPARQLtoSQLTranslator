@@ -5,10 +5,7 @@ import java.util.Map;
 
 import sparql2impala.ImpalaOpVisitor;
 
-/**
- *
- * @author Antony Neu
- */
+
 public interface ImpalaOp {
     public Map<String, String[]> getSchema();
     public String getResultName();
