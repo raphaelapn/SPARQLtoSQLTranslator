@@ -15,18 +15,7 @@ import org.apache.log4j.Logger;
 import sparql2impala.Translator;
 import sparql2impala.run.MyLogger;
 
-/**
- * Main Class for program start. Parses the commandline arguments and calls the
- * Sempala translator.
- * 
- * Options: -h, --help prints the usage help message -d, --delimiter <value>
- * delimiter used in RDF triples if not whitespace -e, --expand expand prefixes
- * used in the query -opt, --optimize turn on SPARQL algebra optimization -i,
- * --input <file> SPARQL query file to translate -o, --output <file> Impala output
- * script file
- * 
- * @author Antony Neu
- */
+
 public class Main {
 
 	private static String inputFile;
@@ -36,23 +25,10 @@ public class Main {
 	private static boolean expand = false;
 	private static String folderName = "";
 
-	// Define a static logger variable so that it references the corresponding
-	// Logger instance
+
 	private static final Logger logger = Logger.getLogger(Main.class);
 
-	/**
-	 * Main method invoked on program start. It parses the commandline arguments
-	 * and calls the Translator.
-	 * 
-	 * Options: -h, --help prints the usage help message -d, --delimiter <value>
-	 * delimiter used in RDF triples if not whitespace -e, --expand expand
-	 * prefixes used in the query -opt, --optimize turn on SPARQL algebra
-	 * optimization -i, --input <file> SPARQL query file to translate -o,
-	 * --output <file> Impala output script file
-	 * 
-	 * @param args
-	 *            commandline arguments
-	 */
+
 	public static void main(String[] args) {
 		// parse the commandline arguments
 		parseInput(args);
@@ -79,7 +55,7 @@ public class Main {
 		translator.setOptimizer(optimize);
 		translator.setExpandMode(expand);
 		translator.setDelimiter(delimiter);
-		//Faz a tradução
+		//Faz a traduÃ§Ã£o
 		translator.translateQuery();
 		}
 		
@@ -89,12 +65,7 @@ public class Main {
 		logger.closeLog();
 	}
 
-	/**
-	 * Parses the commandline arguments.
-	 * 
-	 * @param args
-	 *            commandline arguments
-	 */
+
 	@SuppressWarnings("static-access")
 	private static void parseInput(String[] args) {
 		// DEFINITION STAGE
