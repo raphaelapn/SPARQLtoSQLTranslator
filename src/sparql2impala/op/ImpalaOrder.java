@@ -15,10 +15,7 @@ import com.hp.hpl.jena.sparql.algebra.op.OpOrder;
 import com.hp.hpl.jena.sparql.expr.E_Function;
 import com.hp.hpl.jena.sparql.expr.Expr;
 
-/**
- * 
- * @author Antony Neu
- */
+
 public class ImpalaOrder extends ImpalaOp1 {
 
 	private final OpOrder opOrder;
