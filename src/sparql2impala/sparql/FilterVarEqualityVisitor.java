@@ -5,10 +5,7 @@ import com.hp.hpl.jena.sparql.algebra.op.OpProject;
 import com.hp.hpl.jena.sparql.core.Var;
 import java.util.List;
 
-/**
- *
- * @author Alexander Schaetzle
- */
+
 public class FilterVarEqualityVisitor extends OpVisitorBase {
     
     public List<Var> projectVars;
