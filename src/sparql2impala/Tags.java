@@ -2,10 +2,7 @@ package sparql2impala;
 
 import java.util.HashMap;
 
-/**
- * 
- * @author ALKA2008
- */
+
 public final class Tags {
 
 	// Global Constants
@@ -83,7 +80,7 @@ public final class Tags {
 	public static boolean filterOptimizer = true;
 	public static boolean bgpOptimizer = true;
 
-	// names which cannot be used for columns and their replacements
+
 	public static HashMap<String, String> restrictedNames = new HashMap<String, String>();
 	static {
 		restrictedNames.put("comment", "comme");
@@ -92,7 +89,7 @@ public final class Tags {
 		restrictedNames.put("?date", "dat");
 	}
 
-	// Suppress default constructor for noninstantiability
+
 	private Tags() {
 	}
 
