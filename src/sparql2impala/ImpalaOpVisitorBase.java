@@ -17,13 +17,10 @@ import sparql2impala.op.ImpalaSlice;
 import sparql2impala.op.ImpalaUnion;
 import sparql2impala.op.ImpalaExtend;
 
-/**
- *
- * @author Antony Neu
- */
+
 public class ImpalaOpVisitorBase implements ImpalaOpVisitor {
     
-    // Define a static logger variable so that it references the corresponding Logger instance
+
     protected static Logger logger = Logger.getLogger(ImpalaOpVisitor.class);
 
     // OPERATORS
