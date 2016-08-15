@@ -9,10 +9,6 @@ import sparql2impala.sql.SQLStatement;
 
 import com.hp.hpl.jena.shared.PrefixMapping;
 
-/**
- *
- * @author Antony Neu
- */
 public abstract class ImpalaOpN extends ImpalaBase {
 
     protected List<ImpalaOp> elements = new ArrayList<ImpalaOp>();
