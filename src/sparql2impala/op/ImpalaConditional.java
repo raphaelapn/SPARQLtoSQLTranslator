@@ -6,12 +6,9 @@ import sparql2impala.sql.SQLStatement;
 import com.hp.hpl.jena.shared.PrefixMapping;
 
 
-/**
- *
- * @author Antony Neu
- */
 
-//N√O IMPLEMENTADO
+
+//N√ÉO IMPLEMENTADO
 
 
 
