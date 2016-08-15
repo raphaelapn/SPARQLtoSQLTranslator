@@ -25,12 +25,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-/**
- * Main Class of the ImpalaSPARQL translator.
- * This class generates the Algebra Tree for a SPARQL query,
- * performs some optimizations, translates the Algebra tree into an
- * ImpalaOp tree, initializes the translation and collects the final output.
- */
+
 public class TranslatorInterface extends JFrame implements ActionListener{
 
     private ImpalaOp impalaOpRoot;
