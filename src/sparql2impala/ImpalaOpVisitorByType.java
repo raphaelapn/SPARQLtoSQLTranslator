@@ -29,32 +29,31 @@ public abstract class ImpalaOpVisitorByType implements ImpalaOpVisitor {
     
 
     /**
-     * Operators with no sub operators
-     * @param op 
+     * Operadores que não se relacionam a operadores internos - Op0
+
      */
     protected abstract void visit0(ImpalaOp op);
 
     /**
-     * Operators with 1 sub operator
-     * @param op 
+     * Operadores que se relacionam com 1 operador interno - Op1
+
      */ 
     protected abstract void visit1(ImpalaOp1 op);
 
     /**
-     * Operators with 2 sub operators
+     * Operadores que se relacionam com 2 operadores internos - Op2
      * @param op 
      */
     protected abstract void visit2(ImpalaOp2 op);
 
     /**
-     * Operators with N sub operators
-     * @param op 
+     * Operadores que se relacionam com n operadores internos - OpN
      */
     protected abstract void visitN(ImpalaOpN op);
     
 
 
-    // OPERATORS
+    // Operadores
     @Override
     public final void visit(ImpalaBGP ImpalaBGP) {
         visit0(ImpalaBGP);
@@ -92,7 +91,7 @@ public abstract class ImpalaOpVisitorByType implements ImpalaOpVisitor {
         visit2(ImpalaUnion);
     }
 
-    // SOLUTION MODIFIERS
+    // Modificadores de Solução
     @Override
     public final void visit(ImpalaProject ImpalaProject) {
         visit1(ImpalaProject);
