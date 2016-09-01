@@ -17,7 +17,7 @@ import sparql2impala.op.ImpalaExtend;
 
 public interface ImpalaOpVisitor {
     
-    // Operators
+    // Operadores
     public void visit(ImpalaBGP impalaBGP);
     public void visit(ImpalaFilter impalaFilter);
     public void visit(ImpalaJoin impalaJoin);
@@ -26,7 +26,7 @@ public interface ImpalaOpVisitor {
     //public void visit(ImpalaConditional impalaConditional);
     public void visit(ImpalaUnion impalaUnion);
 
-    // Solution Modifier
+    // Modificadores de Solução
     public void visit(ImpalaProject impalaProject);
     public void visit(ImpalaDistinct impalaDistinct);
     public void visit(ImpalaReduced impalaReduced);
