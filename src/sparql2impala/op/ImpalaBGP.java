@@ -38,14 +38,11 @@ public class ImpalaBGP extends ImpalaOp0 {
 
 		HashMap<Node, TripleGroup> tripleGroups = new HashMap<Node, TripleGroup>();
 
-		// empty PrefixMapping when prefixes should be expanded
+
 		if (expandPrefixes) {
 			prefixes = PrefixMapping.Factory.create();
 		}
 
-		// Partition triples by common subject into triple groups.
-		// Each triple group can then result into its own subquery.
-		// Finally all subqueries are joined by shared variable.
 
 		for (Triple triple : triples) {
 			Node key = null;
@@ -84,7 +81,7 @@ public class ImpalaBGP extends ImpalaOp0 {
 		if (groups.size() > 0) {
 			ArrayList<String> onConditions = new ArrayList<String>();
 			ArrayList<SQLStatement> rights = new ArrayList<SQLStatement>();
-			// Greedy approach: Find join partner with most shared vars.
+			// Find join partner with most shared vars.
 			Map<String, String[]> group_shifted = Schema.shiftToParent(group.getMappings(), group.getName());
 			while (groups.size() > 0) {
 				int index = findBestJoin(group_shifted, groups);
