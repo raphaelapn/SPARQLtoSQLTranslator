@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public final class Tags {
 
-	// Global Constants
+	//Constantes
 	public static final String IMPALA_TABLENAME = "bigtable_parquet";
 	public static final String IMPALA_TABLENAME_TRIPLESTORE = "triplestore_parquet";
 	public static final String IMPALA_BGP = "ImpalaBGP";
@@ -65,7 +65,7 @@ public final class Tags {
 	public static final String LIKE = " LIKE ";
 	public static final String LANG_MATCHES = " LIKE ";
 
-	// Global Fields
+	
 	public static String delimiter = " ";
 	public static String defaultReducer = "%default reducerNum '1';";
 	public static String udf = "ImpalaSPARQL_udf.jar";
