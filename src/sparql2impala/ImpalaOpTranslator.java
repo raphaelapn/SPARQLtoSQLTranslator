@@ -52,9 +52,9 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 
 	public String translate(ImpalaOp op, boolean _expandPrefixes) {
 		expandPrefixes = _expandPrefixes;
-		// Walk through the tree bottom up
+
 		ImpalaOpWalker.walkBottomUp(this, op);
-		// put stack top here
+
 		//String raw = Tags.QUERY_PREFIX + stack.pop().toString() + " ; "+ Tags.QUERY_SUFFIX;
 		String raw = stack.pop().toString() ;
 		//return clean(raw);
@@ -101,10 +101,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	}
 
 	/**
-	 * Translates a BGP into corresponding Impala SQL commands.
-	 * 
-	 * @param bgp
-	 *            BGP in the ImpalaOp Tree
+	 * Translates a BGP 
 	 */
 	@Override
 	public void visit(ImpalaBGP bgp) {
@@ -114,10 +111,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	}
 
 	/**
-	 * Translates a FILTER into corresponding Impala SQL commands.
-	 * 
-	 * @param filter
-	 *            FILTER in the ImpalaOp Tree
+	 * Translates a FILTER 
 	 */
 	@Override
 	public void visit(ImpalaFilter filter) {
@@ -126,10 +120,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	}
 
 	/**
-	 * Translates a JOIN into corresponding SQL commands.
-	 * 
-	 * @param join
-	 *            JOIN in the ImpalaOp Tree
+	 * Translates a JOIN
 	 */
 	@Override
 	public void visit(ImpalaJoin join) {
@@ -140,10 +131,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	}
 
 	/**
-	 * Translates a sequence of JOINs into corresponding Impala SQL Latin commands.
-	 * 
-	 * @param sequence
-	 *            JOIN sequence in the ImpalaOp Tree
+	 * Translates a sequence of JOINs 
 	 */
 	@Override
 	public void visit(ImpalaSequence sequence) {
@@ -183,10 +171,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	}
 
 	/**
-	 * Translates a LEFTJOIN into corresponding Impala SQL commands.
-	 * 
-	 * @param impalaLeftJoin
-	 *            LEFTJOIN in the ImpalaOp Tree
+	 * Translates a LEFTJOIN 
 	 */
 	@Override
 	public void visit(ImpalaLeftJoin impalaLeftJoin) {
@@ -197,26 +182,9 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 				left, right));
 	}
 
-	/**
-	 * Translates a LEFTJOIN without Filter (Conditional) into corresponding Impala SQL
-	 *  commands.
-	 * 
-	 * @param impalaConditional
-	 *            LEFTJOIN without Filter (Conditional) in the ImpalaOp Tree
-	 */
-
-	/*
-	 * @Override public void visit(ImpalaConditional impalaConditional) { throw new
-	 * NotImplemented(); // countLeftJoin++; // String[] leftJoin =
-	 * impalaConditional.translate(Tags.CONDITIONAL // + countLeftJoin); //
-	 * prependToScript(leftJoin[0]); // appendToScript(leftJoin[1]); }
-	 */
 
 	/**
-	 * Translates a UNION into corresponding Impala SQL commands.
-	 * 
-	 * @param impalaUnion
-	 *            UNION in the ImpalaOp Tree
+	 * Translates a UNION 
 	 */
 	@Override
 	public void visit(ImpalaUnion union) {
@@ -228,10 +196,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	}
 
 	/**
-	 * Translates a PROJECT into corresponding Impala SQL commands.
-	 * 
-	 * @param impalaProject
-	 *            PROJECT in the ImpalaOp Tree
+	 * Translates a PROJECT 
 	 */
 	@Override
 	public void visit(ImpalaProject impalaProject) {
@@ -240,7 +205,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 		stack.push(projection);
 	}
 
-	/**Translate GROUP BY**/
+	/**Translate a GROUP BY**/
 	@Override
 	public void visit(ImpalaGroup impalaGroup) {
 		SQLStatement group = impalaGroup.translate(Tags.GROUP,
@@ -248,7 +213,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 		stack.push(group);
 	}
 	
-	/**Translate Extend**/
+	/**Translate an Extend**/
 	@Override
 	public void visit(ImpalaExtend impalaExtend) {
 		SQLStatement extend = impalaExtend.translate(Tags.EXTEND,
@@ -258,10 +223,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	
 	
 	/**
-	 * Translates a DISTINCT into corresponding Impala SQL commands.
-	 * 
-	 * @param impalaDistinct
-	 *            Distinct in the ImpalaOp Tree
+	 * Translates a DISTINCT 
 	 */
 	@Override
 	public void visit(ImpalaDistinct distinct) {
@@ -271,10 +233,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	}
 
 	/**
-	 * Translates a REDUCE into corresponding Impala SQL commands.
-	 * 
-	 * @param impalaReduced
-	 *            REDUCE in the ImpalaOp Tree
+	 * Translates a REDUCE 
 	 */
 	@Override
 	public void visit(ImpalaReduced impalaReduced) {
@@ -285,10 +244,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	}
 
 	/**
-	 * Translates an ORDER into corresponding SQL commands.
-	 * 
-	 * @param impalaOrder
-	 *            ORDER in the ImpalaOp Tree
+	 * Translates an ORDER 
 	 */
 	@Override
 	public void visit(ImpalaOrder impalaOrder) {
@@ -298,10 +254,7 @@ public class ImpalaOpTranslator extends ImpalaOpVisitorBase {
 	}
 
 	/**
-	 * Translates a SLICE into corresponding Impala SQL commands.
-	 * 
-	 * @param impalaSlice
-	 *            SLICE in the ImpalaOp Tree
+	 * Translates a SLICE 
 	 */
 	@Override
 	public void visit(ImpalaSlice slice) {
