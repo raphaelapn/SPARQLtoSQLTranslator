@@ -23,7 +23,7 @@ public class ImpalaOpVisitorBase implements ImpalaOpVisitor {
 
     protected static Logger logger = Logger.getLogger(ImpalaOpVisitor.class);
 
-    // OPERATORS
+    // Operadores
     @Override
     public void visit(ImpalaBGP impalaBGP) {
         logger.error("BGP not supported yet!");
@@ -66,7 +66,7 @@ public class ImpalaOpVisitorBase implements ImpalaOpVisitor {
         throw new UnsupportedOperationException("UNION not supported yet!");
     }
 
-    // SOLUTION MODIFIERS
+    // Modificadores de Solução
     @Override
     public void visit(ImpalaProject impalaProject) {
         logger.error("PROJECT not supported yet!");
