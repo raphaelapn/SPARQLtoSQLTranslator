@@ -10,61 +10,29 @@ import sparql2impala.op.ImpalaOpN;
 
 public class ImpalaOpWalker extends ImpalaOpVisitorByType {
 
-	// Visitor to be applied to all operators in the tree below the given
-	// operator
+
 	private final ImpalaOpVisitor visitor;
-	// Walk through tree bottom up or top down
+
 	private final boolean topDown;
 
-	/**
-	 * Private constructor, initialization using factory functions.
-	 * 
-	 * @param visitor
-	 *            ImpalaOpVisitor to be applied
-	 * @param topDown
-	 *            true - top down, false - bottom up
-	 * @see #walkBottomUp(ImpalaOpVisitor.Impala.ImpalaOpVisitor,
-	 *      Impalasparql.Impala.op.ImpalaOp)
-	 * @see #walkTopDown(ImpalaOpVisitor.Impala.ImpalaOpVisitor,
-	 *      Impalasparql.Impala.op.ImpalaOp)
-	 */
+
 	private ImpalaOpWalker(ImpalaOpVisitor visitor, boolean topDown) {
 		this.visitor = visitor;
 		this.topDown = topDown;
 	}
 
-	/**
-	 * Apply a given ImpalaOpVisitor to all operators in a ImpalaOp tree walking top
-	 * down.
-	 * 
-	 * @param visitor
-	 *            ImpalaOpVisitor to be applied
-	 * @param op
-	 *            Root of ImpalaOp tree
-	 * @see ImpalaOpVisitor.Impala.ImpalaOpVisitor
-	 */
+
 	public static void walkTopDown(ImpalaOpVisitor visitor, ImpalaOp op) {
 		op.visit(new ImpalaOpWalker(visitor, true));
 	}
 
-	/**
-	 * Apply a given ImpalaOpVisitor to all operators in a ImpalaOp tree walking
-	 * bottom up.
-	 * 
-	 * @param visitor
-	 *            ImpalaOpVisitor to be applied
-	 * @param op
-	 *            Root of ImpalaOp tree
-	 * @see ImpalaOpVisitor.Impala.ImpalaOpVisitor
-	 */
 	public static void walkBottomUp(ImpalaOpVisitor visitor, ImpalaOp op) {
 		op.visit(new ImpalaOpWalker(visitor, false));
 	}
 
 	/**
-	 * Visit leef operator with no sub operators.
+	 * Visita operador folha sem operadores internos.
 	 * 
-	 * @param op
 	 */
 	@Override
 	protected void visit0(ImpalaOp op) {
@@ -72,7 +40,7 @@ public class ImpalaOpWalker extends ImpalaOpVisitorByType {
 	}
 
 	/**
-	 * Visit operator with 1 sub operator.
+	 * Visita operador com 1 operador interno.
 	 * 
 	 * @param op
 	 */
@@ -89,7 +57,7 @@ public class ImpalaOpWalker extends ImpalaOpVisitorByType {
 	}
 
 	/**
-	 * Visit operator with 2 sub operator.
+	 * Visita operador com 2 operadores internos.
 	 * 
 	 * @param op
 	 */
@@ -110,9 +78,8 @@ public class ImpalaOpWalker extends ImpalaOpVisitorByType {
 	}
 
 	/**
-	 * Visit operator with N sub operator.
+	 * Visita operador com N operadores internos.
 	 * 
-	 * @param op
 	 */
 	@Override
 	protected void visitN(ImpalaOpN op) {
