@@ -35,7 +35,7 @@ public class TripleGroup {
 	ArrayList<Triple> crossjoin = new ArrayList<Triple>();
 	private Map<String, String[]> crossJoinMapping = new HashMap<String, String[]>();
 
-	// choose triplestore as predicate unbound
+
 	private boolean selectFromTripleStore = false;
 	private boolean selectPredicateOnlny = false;
 
@@ -109,7 +109,7 @@ public class TripleGroup {
 				first = false;
 				// only check subject once per group - grupo tem o mesmo sujeito para todas as triplas
 				if (subject.isURI() || subject.isBlank()) {
-					// subject is bound -> add to Filter
+					// sujeito definido -> adiciona a clausula FILTER
 					whereConditions.add("subject = '"
 							+ FmtUtils.stringForNode(subject,
 									this.prefixMapping) + "'");
@@ -121,7 +121,7 @@ public class TripleGroup {
 				}
 			}
 			if (predicate.isURI()) {
-				// cross join needed?
+				// cross join necessario?
 				//System.out.println(FmtUtils.stringForNode(predicate));
 				int index = searchTripleSamePredicate(i);
 				while (index != -1) {
@@ -129,7 +129,7 @@ public class TripleGroup {
 					triples.remove(index);
 					index = searchTripleSamePredicate(i);
 				}
-				// predicate is bound -> add to Filter
+				// predicado definido -> adiciona a clausula FILTER
 				/*whereConditions.add(SpecialCharFilter.filter(FmtUtils
 						.stringForNode(predicate, this.prefixMapping)
 						+ " is not null"));*/
@@ -169,7 +169,7 @@ public class TripleGroup {
 			}
 		}
 
-		// FROM
+		// PREPARA CLAUSULA FROM
 		String tmpTable = "";
 		for (int i = 0; i < triples.size(); i++) {
 			Triple triple = triples.get(i);
@@ -195,12 +195,12 @@ public class TripleGroup {
 			select.setFrom(table);
 		}
 		
-		// WHERE
+		// PREPARA CLAUSULA WHERE
 		for (String where : whereConditions) {
 			select.addWhereConjunction(where);
 		}
 
-		// cross join is needed
+		// CASO O CROSS JOIN SEJA NECESSARIO
 		if (!crossjoin.isEmpty()) {
 			select.setName(this.name + "_" + subQueries++);
 			ArrayList<SQLStatement> rights = new ArrayList<SQLStatement>();
@@ -239,7 +239,7 @@ public class TripleGroup {
 	}
 
 	/**
-	 * Join with another TripleGroup.
+	 * Define Join entre grupos de triplas (com sujeitos em comum)
 	 */
 
 	public void join(TripleGroup other) {
@@ -275,13 +275,12 @@ public class TripleGroup {
 
 	public Map<String, String[]> getMappings() {
 		Map<String, String[]> temp = new HashMap<String, String[]>();
-		// Merge both mappings
 		temp.putAll(this.mapping);
 		temp.putAll(crossJoinMapping);
 		return temp;
 	}
 
-	// Changes second part of entry leaving everything else in tact.
+
 	public void shiftOrigin(String parent) {
 		this.mapping = Schema.shiftOrigin(this.mapping, parent);
 	}
