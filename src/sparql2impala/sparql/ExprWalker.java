@@ -2,10 +2,6 @@ package sparql2impala.sparql;
 
 import com.hp.hpl.jena.sparql.expr.*;
 
-/**
- *
- * @author Alexander Schaetzle
- */
 public class ExprWalker extends ExprVisitorFunction {
 
     private final ExprVisitor visitor;
